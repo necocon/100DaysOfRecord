@@ -30,7 +30,6 @@ inputCounterElement.value = localStorage.getItem('days');
 inputCounterElement.addEventListener('input', (event) => {
     const inputValue = inputCounterElement.value;
     if (event.data === ".") {
-        const isEmptyInputField = beforeInputValue.length === 1 && event.inputType === "deleteContentBackward";
         if (beforeInputValue.length === 0) {
             inputCounterElement.value = "";
         } else {
