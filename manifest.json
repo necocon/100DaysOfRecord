@@ -32,8 +32,6 @@
     "permissions": [
         "contextMenus",
         "tabs",
-        "background",
-        "http://*/*",
-        "https://*/*"
+        "*://*/*"
     ]
 }
