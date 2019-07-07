@@ -23,6 +23,7 @@ if (localStorage.getItem('days') == null) {
     localStorage.setItem('days', inputCounterElement.value);
 }
 let beforeInputValue = String(localStorage.getItem('days'));
+inputCounterElement.value = localStorage.getItem('days');
 
 // 入力ドームに値が入力される度に呼び出される。
 // 要素からvalueを取得した場合、valueは数値以外のとき空文字になる。
@@ -30,7 +31,7 @@ inputCounterElement.addEventListener('input', (event) => {
     const inputValue = inputCounterElement.value;
     if (event.data === ".") {
         const isEmptyInputField = beforeInputValue.length === 1 && event.inputType === "deleteContentBackward";
-        if (isEmptyInputField || beforeInputValue.length === 0) {
+        if (beforeInputValue.length === 0) {
             inputCounterElement.value = "";
         } else {
             // "."が入力されたととき小数点を除いた数値が代入されるので、フォームに入力されている小数点を削除してからlocalStrageの値を代入する。
@@ -49,8 +50,16 @@ inputCounterElement.addEventListener('input', (event) => {
         localStorage.setItem('days', inputCounterElement.value); 
     } else {
         inputCounterElement.value = "";
+        localStorage.setItem('days', MIN_COUNT); 
     }
     beforeInputValue = inputCounterElement.value; 
+});
+
+// フォーカスを外したきときに第２引数に渡した関数が実行される。
+inputCounterElement.addEventListener('blur', (event) => {
+    if (inputCounterElement.value === "") {
+        inputCounterElement.value = MIN_COUNT;
+    }
 });
 
 // -ボタンがクリックされたときに第２引数に渡した関数が実行される。
