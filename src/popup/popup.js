@@ -30,16 +30,12 @@ inputCounterElement.value = localStorage.getItem('days');
 inputCounterElement.addEventListener('input', (event) => {
     const inputValue = inputCounterElement.value;
     if (event.data === ".") {
-        if (beforeInputValue.length === 0) {
-            inputCounterElement.value = "";
-        } else {
-            // "."が入力されたととき小数点を除いた数値が代入されるので、フォームに入力されている小数点を削除してからlocalStrageの値を代入する。
-            // 例 "4."を入力 -> inputValue: 4
-            inputCounterElement.value = "";
-            inputCounterElement.value = localStorage.getItem('days');
+        // "."が入力されたととき小数点を除いた数値が代入されるので、入力フィールドを必ず初期化
+        // 例 "4."を入力 -> inputValue: 4
+        inputCounterElement.value = "";
+        if (beforeInputValue.length > 0) {
+            inputCounterElement.value = beforeInputValue;
         }
-        beforeInputValue = inputCounterElement.value;
-        return;
     }
     // 文字列の先頭が0以外の数値のときにtrueになる正規表現。
     const isNumberExcept0 = new RegExp('^[1-9]{1}$');
