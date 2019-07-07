@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,20 @@
     <link rel="stylesheet" href="style.css">
     <title>100DaysOfRecord</title>
 </head>
+
 <body>
-    <div class="spinner">
-        <button class="decrease_button" name="decrease_button">-</button>
-        <!-- valueタグから右側の数値は検討中 -->
-        <input class="input_counter" type="number" name="input_counter" value="1" min="0" max="1000">
-        <button class="increase_button" name="increase_button">+</button>
-    </div>
+    <main>
+        <div class="top">
+            <img src="../../icon/cat_pc_icon_32.png" alt="拡張機能のテーマアイコン" />
+            <h1>100DaysOfRecord</h1>
+        </div>
+        <div class="spinner">
+            <button class="decrease_button" name="decrease_button">-</button>
+            <input class="input_counter" type="number" name="input_counter" value="1" min="0" max="1000">
+            <button class="increase_button" name="increase_button">+</button>
+        </div>
+    </main>
 </body>
 <script src="popup.js" defer></script>
+
 </html>
