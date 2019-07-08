@@ -1,5 +1,5 @@
 chrome.contextMenus.create({
-	"title": "100DaysOfRecord",
+	"title": "日数と100DaysOfCodeのハッシュタグを貼り付け",
 	"type": "normal",
     "contexts": ["all"],
     "id": "parent"
