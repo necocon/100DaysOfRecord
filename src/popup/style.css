@@ -5,12 +5,13 @@
 }
 
 .spinner {
-  border: 1px solid #eee;
+  border: 2px solid #eee;
   display: inline-block;
   overflow: visible;
   height: 2.1em;
   background: #fff;
   padding: 1px;
+  margin-bottom: 5px;
 }
 
 .spinner .input_counter {
@@ -19,7 +20,7 @@
   text-align: center;
   border: 0;
   vertical-align: top;
-  font-size: 0.9em;
+  font-size: 1em;
   background: transparent;
   color: #2c3e50;
   outline: none;
@@ -35,4 +36,38 @@
   background: #1abc9c;
   color: #ecf0f1;
   border: none;
+}
+
+html {
+  width: 200px;
+  width: 200px;
+}
+
+main {
+  text-align: center;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
+  padding-bottom: 5px;
+}
+
+
+.top_img {
+  margin: 3px;
+}
+
+.top_title {
+  vertical-align: middle;
+  display: inline-block;
+  font-weight: Medium;
+  font-size: 12px;
+}
+
+.display_day_count {
+  font-size: 16px;
+  text-align: center;
 }
