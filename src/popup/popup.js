@@ -18,12 +18,15 @@ const getLeadingNumber = (value) => {
 const decreaseBtnElement = document.getElementsByName('decrease_button')[0];
 const inputCounterElement = document.getElementsByName('input_counter')[0];
 const increaseBtnElement = document.getElementsByName('increase_button')[0];
+const displayDaysElement = document.getElementsByClassName('count')[0];
 
 if (localStorage.getItem('days') == null) {
     localStorage.setItem('days', inputCounterElement.value);
 }
 let beforeInputValue = String(localStorage.getItem('days'));
 inputCounterElement.value = localStorage.getItem('days');
+displayDaysElement.textContent = inputCounterElement.value;
+chrome.browserAction.setBadgeText({ text: String(inputCounterElement.value) });
 
 // 入力ドームに値が入力される度に呼び出される。
 // 要素からvalueを取得した場合、valueは数値以外のとき空文字になる。
@@ -42,10 +45,14 @@ inputCounterElement.addEventListener('input', (event) => {
     if (isNumberExcept0.test(inputValue.slice(0, 1))) {
         // 文字列の先頭から数値の部分のみ抽出して、表示できる最大桁数分の文字列を取得する。
         inputCounterElement.value = getLeadingNumber(inputValue).slice(0, String(MAX_COUNT).length);
-        localStorage.setItem('days', inputCounterElement.value); 
+        localStorage.setItem('days', inputCounterElement.value);
+        displayDaysElement.textContent = inputCounterElement.value;
+        chrome.browserAction.setBadgeText({ text: String(inputCounterElement.value) });
     } else {
         inputCounterElement.value = "";
-        localStorage.setItem('days', MIN_COUNT); 
+        localStorage.setItem('days', MIN_COUNT);
+        displayDaysElement.textContent = MIN_COUNT;
+        chrome.browserAction.setBadgeText({ text: String(MIN_COUNT) });
     }
     beforeInputValue = inputCounterElement.value; 
 });
@@ -61,7 +68,9 @@ inputCounterElement.addEventListener('blur', (event) => {
 decreaseBtnElement.addEventListener('click', (event) => {
     if (inputCounterElement.value > MIN_COUNT) {
         inputCounterElement.value = Number(inputCounterElement.value) - 1;
+        displayDaysElement.textContent = inputCounterElement.value;
         localStorage.setItem('days', inputCounterElement.value);
+        chrome.browserAction.setBadgeText({ text: String(inputCounterElement.value) });
     }
 });
 
@@ -69,6 +78,8 @@ decreaseBtnElement.addEventListener('click', (event) => {
 increaseBtnElement.addEventListener('click', (event) => {
     if (inputCounterElement.value < MAX_COUNT) {
         inputCounterElement.value = Number(inputCounterElement.value) + 1;
+        displayDaysElement.textContent = inputCounterElement.value;
         localStorage.setItem('days', inputCounterElement.value);
+        chrome.browserAction.setBadgeText({ text: String(inputCounterElement.value) });
     }
 });
