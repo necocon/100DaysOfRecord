@@ -1,9 +1,6 @@
-const　HASHTAG = "<p>#100DaysOfCode</p>";
+const　HASHTAG = "#100DaysOfCode";
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-        const activeElement = document.activeElement;
-        console.log(activeElement);
-        activeElement.innerHTML = HASHTAG;
-        console.log(activeElement.innerHTML);
+        document.activeElement.innerText = `Day3 ${HASHTAG}`;
     }
 );
