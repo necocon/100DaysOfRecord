@@ -10,12 +10,11 @@
   overflow: visible;
   height: 2.1em;
   background: #fff;
-  padding: 1px;
   margin-bottom: 5px;
 }
 
 .spinner .input_counter {
-  width: 4.3em;
+  width: 4.6em;
   height: 100%;
   text-align: center;
   border: 0;
@@ -68,7 +67,7 @@ main {
   font-family: Helvetica Neue;
 }
 
-.display_day_count {
+.display_days {
   font-size: 16px;
   text-align: center;
 }
