@@ -14,4 +14,4 @@
 
 <h2>License</h2>
 Copyright (c) 2019 necoco<br>
-Licensed under the <a href="LICENSE.txt">[MIT]</a> license.
+Licensed under the <a href="LICENSE">[MIT]</a> license.
