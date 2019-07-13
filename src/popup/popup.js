@@ -1,3 +1,4 @@
+'use strict';
 // name属性は複数ある場合があるので、返り値はNodeListになる。今回は要素が1つしかないので先頭の要素を取得している。
 const decreaseBtnElement = document.getElementsByName('decrease_button')[0];
 const inputCounterElement = document.getElementsByName('input_counter')[0];

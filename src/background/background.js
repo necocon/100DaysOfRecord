@@ -1,3 +1,4 @@
+'use strict';
 chrome.contextMenus.create({
 	'title': '日数とハッシュタグを貼り付け',
 	'type': 'normal',
