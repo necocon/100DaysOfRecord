@@ -1,4 +1,4 @@
-<img width="100" src="https://github.com/necocon/100DaysOfRecord/blob/readme/icon/cat_pc_icon_128.png?raw=true" alt="100DaysOfRecord logo"></a>
+<img width="100" src="https://github.com/necocon/100DaysOfRecord/blob/master/icon/cat_pc_icon_128.png?raw=true" alt="100DaysOfRecord logo"></a>
 
 <h1>100DaysOfRecord</h1>
 勉強日数を記録してペーストできるChrome拡張機能です。
