@@ -1,13 +1,21 @@
-const HASHTAG = "#100DaysOfCode";
 const MIN_COUNT = 1;
-
+const templateText = (text) => `Day${text} #100DaysOfCode`;
+ 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    // 何も選択されていない場合はbodyかnullが返ってくる。
+    const activeElement = document.activeElement;
+    if (activeElement === null) {
+        return;
+    }
+    if (activeElement.tagName === 'BODY') {
+        return;
+    }
+
     chrome.storage.local.get(['days'], result => {
-        //FIXME: HTMLの構造をぶっ壊してしまうので修正が必要
-        if (result.days === undefined) {
-            document.activeElement.innerText = `Day${MIN_COUNT} ${HASHTAG}`;
+        if (result.days) {
+            document.execCommand('insertText', false, templateText(result.days));
         } else {
-            document.activeElement.innerText = `Day${result.days} ${HASHTAG}`;
+            document.execCommand('insertText', false, templateText(MIN_COUNT));
         }
     });
 });
