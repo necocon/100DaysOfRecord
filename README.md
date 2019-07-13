@@ -1,16 +1,15 @@
+<img src="https://github.com/necocon/100DaysOfRecord/blob/readme/icon/cat_pc_icon_128.png?raw=true"><br>
+
 # 100DaysOfRecord
 勉強日数を記録してペーストできるChrome拡張機能です。
-https://github.com/necocon/100DaysOfRecord
 
 <hr>
 ## Usage
 Chromeウェブストア(URL)
-
-1.＋やーのボタンで日数を変更することができます。
-
-2.入力エリアで右クリックメニューを出して「日数とハッシュタグを貼り付け」を選択すると Day * #100DaysOfCode をペーストすることができます。
+1. 拡張機能アイコンをクリック
+2. 日数をカウント
+3. 入力エリアで右クリックメニューを出して「日数とハッシュタグを貼り付け」を選択
 
 <hr>
 ## License
-
-[MIT]
+Copyright (c) 2019 necoco
