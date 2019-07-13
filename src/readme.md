@@ -1,15 +1,16 @@
 # 100DaysOfRecord
-A Chrome extension that lets you record and paste days of study.
+勉強日数を記録してペーストできるChrome拡張機能です。
 https://github.com/necocon/100DaysOfRecord
 
+<hr>
 ## Usage
-URL
-1. You can change the number of days with the + or-button.
-2. You can paste the Day * # 100DaysOfCode by issuing the right-click menu in the input area and selecting "Paste Hashtag of 100DaysOfCode".
+Chromeウェブストア(URL)
 
-## Author
-twitter
-[@necoco256](http://twitter.com/necoco256)
+1.＋やーのボタンで日数を変更することができます。
 
+2.入力エリアで右クリックメニューを出して「日数とハッシュタグを貼り付け」を選択すると Day * #100DaysOfCode をペーストすることができます。
+
+<hr>
 ## License
+
 [MIT]
