@@ -32,7 +32,7 @@ const setDays = days => {
 // chromeのストレージから'days'キーでセットした値を取得する。結果はresult.キー名で取得できる。
 chrome.storage.local.get(['days'], result => {
     if (!result.days) {
-        chrome.storage.local.set({days: MIN_COUNT});
+        result.days = MIN_COUNT;
     }
     let beforeInputValue = String(result.days);
     inputCounterElement.value = result.days;
