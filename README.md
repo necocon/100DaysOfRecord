@@ -1,4 +1,4 @@
-<img src="https://github.com/necocon/100DaysOfRecord/blob/readme/icon/cat_pc_icon_128.png?raw=true"><br>
+![100DaysOfRecord Neco](https://github.com/necocon/100DaysOfRecord/blob/readme/icon/cat_pc_icon_128.png?raw=true "100DaysOfRecord Neco")
 
 # 100DaysOfRecord
 勉強日数を記録してペーストできるChrome拡張機能です。
