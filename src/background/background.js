@@ -1,17 +1,10 @@
 'use strict';
-// 拡張機能のインストール時に実行される
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.contextMenus.create({
-        'title': '日数とハッシュタグを貼り付け',
-        'type': 'normal',
-        'contexts': ['all'],
-        'id': 'parent'
-    });
-});
+const MIN_COUNT = 1;
 
-// ContextMenuaから「日数とハッシュタグを貼り付け」をクリックしたときに第2引数に渡した関数が実行される。
-chrome.contextMenus.onClicked.addListener((info, tab) => {
-    // backgroundからcontentやpopupにメッセージを通知する。
-    chrome.tabs.sendMessage(tab.id, 'action');
+chrome.storage.local.get(['days'], result => {
+    if (!result.days) {
+        result.days = MIN_COUNT;
+    }
+    chrome.browserAction.setBadgeText({ text: String(result.days) });
 });
 

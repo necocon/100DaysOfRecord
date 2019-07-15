@@ -13,12 +13,6 @@
         "scripts": ["src/background/background.js"],
         "persistent": false
     },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["src/content/content.js"]
-        }
-    ],
     "browser_action": {
         "default_popup": "src/popup/popup.html",
         "default_icon": {
@@ -30,8 +24,6 @@
         "default_title": "100DaysOfRecord"
     },
     "permissions": [
-        "contextMenus",
-        "tabs",
         "storage",
         "*://*/*"
     ]

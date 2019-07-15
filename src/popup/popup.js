@@ -4,6 +4,7 @@ const decreaseBtnElement = document.getElementsByName('decrease_button')[0];
 const inputCounterElement = document.getElementsByName('input_counter')[0];
 const increaseBtnElement = document.getElementsByName('increase_button')[0];
 const displayDaysElement = document.getElementsByClassName('days')[0];
+const copyBtn = document.getElementsByName('copy_button')[0];
 
 const MIN_COUNT = inputCounterElement.min;
 const MAX_COUNT = inputCounterElement.max;
@@ -28,6 +29,8 @@ const setDays = days => {
     chrome.storage.local.set({days: days});
     chrome.browserAction.setBadgeText({ text: String(days) });
 };
+
+const templateText = (text) => `Day${text} #100DaysOfCode`;
 
 // chromeのストレージから'days'キーでセットした値を取得する。結果はresult.キー名で取得できる。
 chrome.storage.local.get(['days'], result => {
@@ -85,5 +88,14 @@ chrome.storage.local.get(['days'], result => {
             inputCounterElement.value = Number(inputCounterElement.value) + 1;
             setDays(inputCounterElement.value);
         }
+    });
+});
+
+copyBtn.addEventListener('click', event => {
+    chrome.storage.local.get(['days'], result => {
+        if (!result.days) {
+            result.days = MIN_COUNT;
+        }
+        navigator.clipboard.writeText(templateText(result.days));
     });
 });
