@@ -24,7 +24,6 @@
         "default_title": "100DaysOfRecord"
     },
     "permissions": [
-        "storage",
-        "*://*/*"
+        "storage"
     ]
 }
