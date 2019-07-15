@@ -26,7 +26,7 @@ const getLeadingNumber = (value) => {
 
 const setDays = days => {
     displayDaysElement.textContent = days;
-    chrome.storage.local.set({days: days});
+    chrome.storage.local.set({ days: days });
     chrome.browserAction.setBadgeText({ text: String(days) });
 };
 
@@ -40,7 +40,7 @@ chrome.storage.local.get(['days'], result => {
     let beforeInputValue = String(result.days);
     inputCounterElement.value = result.days;
     setDays(result.days);
-    
+
     // 入力フィールドに値が入力される度に第2引数に渡した関数が実行される。
     // 要素からvalueを取得した場合、valueは数値以外のとき空文字になる。
     inputCounterElement.addEventListener('input', (event) => {
@@ -63,32 +63,32 @@ chrome.storage.local.get(['days'], result => {
             inputCounterElement.value = '';
             setDays(MIN_COUNT);
         }
-        beforeInputValue = inputCounterElement.value; 
+        beforeInputValue = inputCounterElement.value;
     });
-    
-    // フォーカスを外したきときに第2引数に渡した関数が実行される。
-    inputCounterElement.addEventListener('blur', (event) => {
-        if (inputCounterElement.value === '') {
-            inputCounterElement.value = MIN_COUNT;
-            setDays(MIN_COUNT);
-        }
-    });
-    
-    // -ボタンがクリックされたときに第2引数に渡した関数が実行される。
-    decreaseBtnElement.addEventListener('click', (event) => {
-        if (inputCounterElement.value > MIN_COUNT) {
-            inputCounterElement.value = Number(inputCounterElement.value) - 1;
-            setDays(inputCounterElement.value);
-        }
-    });
-    
-    // +ボタンがクリックされたときに第2引数に渡した関数が実行される。
-    increaseBtnElement.addEventListener('click', (event) => {
-        if (inputCounterElement.value < MAX_COUNT) {
-            inputCounterElement.value = Number(inputCounterElement.value) + 1;
-            setDays(inputCounterElement.value);
-        }
-    });
+});
+
+// フォーカスを外したきときに第2引数に渡した関数が実行される。
+inputCounterElement.addEventListener('blur', (event) => {
+    if (inputCounterElement.value === '') {
+        inputCounterElement.value = MIN_COUNT;
+        setDays(MIN_COUNT);
+    }
+});
+
+// -ボタンがクリックされたときに第2引数に渡した関数が実行される。
+decreaseBtnElement.addEventListener('click', (event) => {
+    if (inputCounterElement.value > MIN_COUNT) {
+        inputCounterElement.value = Number(inputCounterElement.value) - 1;
+        setDays(inputCounterElement.value);
+    }
+});
+
+// +ボタンがクリックされたときに第2引数に渡した関数が実行される。
+increaseBtnElement.addEventListener('click', (event) => {
+    if (inputCounterElement.value < MAX_COUNT) {
+        inputCounterElement.value = Number(inputCounterElement.value) + 1;
+        setDays(inputCounterElement.value);
+    }
 });
 
 copyBtn.addEventListener('click', event => {
