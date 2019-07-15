@@ -10,7 +10,6 @@
   overflow: visible;
   height: 2.1em;
   background: #fff;
-  margin-bottom: 5px;
 }
 
 .spinner .input_counter {
@@ -70,4 +69,30 @@ main {
 .display_days {
   font-size: 16px;
   text-align: center;
+}
+
+.copy_button {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+  border: 2px solid #1abc9c;
+  outline: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  margin-top: 20px;
+  margin-bottom: 15px; 
+}
+
+.copy_button:active {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 2px 2px rgba(0, 0, 0, 0.19);
+  border: 0.5px solid rgba(26, 188, 156, 0.5);
+}
+
+.copy_button img {
+  width: 64px;
+  height: 64px;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
 }
