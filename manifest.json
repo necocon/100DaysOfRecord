@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "name": "100DaysOfRecord（ストアへのリンク）",
-    "version": "1.0.0",
-    "description": "勉强日数をカウントして、100DaysOfCodeのハッシュタグ付きで日数をペーストできる拡張機能。",
+    "version": "1.1.0",
+    "description": "勉强日数をカウントして、日数と100DaysOfCodeのハッシュタグをクリップボードにコピーできる拡張機能。",
     "icons": {
         "16": "icon/cat_pc_icon_16.png",
         "32": "icon/cat_pc_icon_32.png",
